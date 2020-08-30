@@ -26,6 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
       env:
+        GITHUB_PAGES: true
         API_KEY: ${{ secrets.API_KEY }}
         END_POINT: ${{ secrets.END_POINT }}
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
