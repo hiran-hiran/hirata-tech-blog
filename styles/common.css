@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Noto+Sans+JP&display=swap');
+body{
+    font-family: 'Alata', 'Noto Sans JP', sans-serif;
+    color: #333;
+}
+
+.content-wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+	justify-content: space-between;
+}
+
+.content-wrap main{
+    width: 850px;
+}
+
+
+.content-wrap aside{
+    width: 300px;
+}

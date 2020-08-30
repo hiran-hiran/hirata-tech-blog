@@ -10,7 +10,6 @@ const Header = () => {
             <ul className="navlists">
                 <li><Link href="/about"><a>About</a></Link></li>
                 <li><Link href="/contact"><a>Contact</a></Link></li>
-                {/* <li><Link href="/nav03">Nav03</Link></li> */}
             </ul>
         </StyledHeader>
     )

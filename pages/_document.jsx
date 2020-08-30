@@ -13,7 +13,7 @@ class MyDocument extends Document {
         return (
             <Html lang="ja">
                 <Head>
-                    <title>Aluco Blog</title>
+                    {/* <title>Aluco Blog</title> */}
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <body>

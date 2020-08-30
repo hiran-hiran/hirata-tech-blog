@@ -1,42 +1,36 @@
 import Head from 'next/head'
 import Card from '../components/Card';
+import Layout from '../components/Layout';
+import { getAllPosts, getCategories } from '../lib/api';
 
 
+export const getStaticProps = async () => {
+	const posts = await getAllPosts()
+	const categories = await getCategories()
+	
+	return { props: { posts, categories } }
+}
 
 
-
-const Home = ({ posts }) => {
-	// console.log(posts.contents);
+const Home = ({posts, categories}) => {
 
 	return (
-		<div>
-			<main>
-				<ul>
-					{posts.contents.map(post => (
-						<Card
-							post={post}
-							className=""
-							key={post.id}
-						/>
-					))}
-				</ul>
-
-			</main>
-			<aside>
-				sidebar
-			</aside>
-		</div>
+		<Layout categories={categories} >
+			<ul>
+				{posts.contents.map(post => (
+					<Card
+						post={post}
+						className=""
+						key={post.id}
+					/>
+				))}
+			</ul>
+		</Layout>
 	)
 }
 
 
 
 
-export const getStaticProps = async () => {
-	const key = { headers: {"X-API-KEY": process.env.API_KEY} }
-	const res = await fetch(process.env.END_POINT + "blog", key)
-	const posts = await res.json()
-	return { props: { posts } }
-}
 
-export default Home;
+export default Home

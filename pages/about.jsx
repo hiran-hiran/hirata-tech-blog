@@ -1,10 +1,19 @@
 import React from 'react'
+import Layout from '../components/Layout'
+import { getCategories } from '../lib/api'
 
-const about = () => {
+
+export const getStaticProps = async () => {
+	const categories = await getCategories()
+	return { props: { categories } }
+}
+
+
+const about = ({categories}) => {
     return (
-        <div>
+        <Layout categories={categories}>
             Aboutページ
-        </div>
+        </Layout>
     )
 }
 
