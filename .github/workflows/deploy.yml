@@ -25,12 +25,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+    - run: npm run export
       env:
         GITHUB_PAGES: true
         API_KEY: ${{ secrets.API_KEY }}
         END_POINT: ${{ secrets.END_POINT }}
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-    - run: npm run export
     
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.5.9
