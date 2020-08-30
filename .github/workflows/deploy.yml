@@ -29,7 +29,6 @@ jobs:
         END_POINT: ${{ secrets.END_POINT }}
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     - run: npm ci
-    - run: npm run build
     - run: npm run export
     
     - name: Deploy 🚀
