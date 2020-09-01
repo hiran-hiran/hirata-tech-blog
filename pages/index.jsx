@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import { getAllPosts, getCategories } from '../lib/api';
 
 
+
 export const getStaticProps = async () => {
 	const posts = await getAllPosts()
 	const categories = await getCategories()
@@ -15,7 +16,7 @@ export const getStaticProps = async () => {
 const Home = ({posts, categories}) => {
 
 	return (
-		<Layout categories={categories} >
+		<Layout categories={categories}>
 			<ul>
 				{posts.contents.map(post => (
 					<Card

@@ -1,4 +1,5 @@
 module.exports = {
+    //github pages用
     basePath: process.env.GITHUB_PAGES ? "/next-microcms-blog" : "",
     assetPrefix: process.env.GITHUB_PAGES ? "/next-microcms-blog" : "",
     env: {

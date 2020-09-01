@@ -5,7 +5,7 @@ import { getAllPosts, getPost, getCategories } from "../../lib/api";
 
 
 export const getStaticPaths = async () => {
-	const posts = await getAllPosts()
+    const posts = await getAllPosts()
     const paths = posts.contents.map(post => ({
         params: { id: post.id }
     }))
@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async context => {
     const id = context.params.id
     const post = await getPost(id)
-	const categories = await getCategories()
+    const categories = await getCategories()
 
     return { props: { post, categories } }
 }
@@ -23,13 +23,18 @@ export const getStaticProps = async context => {
 
 
 const Blog = ({ post, categories }) => {
+    console.log(post);
 
     return (
         <Layout categories={categories}>
-            <div>
-                <h1>{post.title}</h1>
+            <StyledDiv>
+                <div className="post-title-wrap">
+                    <h1>{post.title}</h1>
+                    <span>{post.category[0].category}</span>
+                </div>
+
                 <div dangerouslySetInnerHTML={{ __html: `${post.body}` }}></div>
-            </div>
+            </StyledDiv>
         </Layout>
 
     )
@@ -41,4 +46,13 @@ export default Blog
 
 
 
+const StyledDiv = styled.div`
+.post-title-wrap{
+    h1{
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+}
+`;
 

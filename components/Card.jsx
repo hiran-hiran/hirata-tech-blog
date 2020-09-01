@@ -44,6 +44,9 @@ const StyledCard = styled.li`
      width: 100%;
      border-bottom: 1px solid #ccc;
      padding: 20px;
+     &:last-child{
+        border-bottom: none;
+     }
 
      .flex{
          display: flex;
@@ -71,8 +74,8 @@ const StyledCard = styled.li`
             }
              .title{
                 margin-bottom: 20px;
-                 font-size: 20px;
-                 font-weight: bold;
+                 font-size: 24px;
+                 font-weight: 700;
              }
          }
      }
