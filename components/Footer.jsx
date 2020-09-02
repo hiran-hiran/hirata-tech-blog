@@ -45,6 +45,28 @@ const StyledFooter = styled.footer`
             margin-bottom: 40px;
             li{
                 margin: 0 20px;
+                a{
+                    position: relative;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: #2DB2A4;
+                        transform: scale(0, 1);
+                        transform-origin: right top;
+                        transition: transform .3s;
+                    }
+                    &:hover{
+                        color: #2DB2A4;
+                    }
+                    &:hover::after{
+                        transform-origin: left top;
+                        transform: scale(1, 1);
+                    }
+                }
             }
         }
         .icon-wrap{
@@ -63,6 +85,13 @@ const StyledFooter = styled.footer`
                 text-align: center;
                 .white{
                     color: white;
+                    transition: ease-in-out .3s;
+                }
+                &:hover{
+                    border: 1px solid #2DB2A4;
+                    .white{
+                        color: #2DB2A4;
+                    }
                 }
             }
         }

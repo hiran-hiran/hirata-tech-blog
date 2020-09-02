@@ -7,7 +7,7 @@ body{
 .content-wrap{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 60px 0 160px;
     display: flex;
 	justify-content: space-between;
 }
@@ -19,4 +19,8 @@ body{
 
 .content-wrap aside{
     width: 300px;
+}
+
+a{
+    transition: ease-in-out .3s;
 }

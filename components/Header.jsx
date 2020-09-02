@@ -65,9 +65,13 @@ const StyledHeader = styled.header`
                 /* height: 40px; */
                 padding: 12px 10px 12px 40px;
                 display: block;
-                box-shadow: 0 0 6px rgba(0,0,0,0.3);
                 border-radius: 10px;
                 font-size: 18px;
+                transition: ease-in-out .3s;
+                &:focus{
+                    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+                transform: scale(1.01);
+                }
             }
             button{
                 position: absolute;
@@ -91,6 +95,25 @@ const StyledHeader = styled.header`
         color: #052936;
         li{
             margin-left: 40px;
+            a{
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: #052936;
+                    transform: scale(0, 1);
+                    transform-origin: right top;
+                    transition: transform .3s;
+                }
+                &:hover::after{
+                    transform-origin: left top;
+                    transform: scale(1, 1);
+                }
+            }
         }
     }
 `;

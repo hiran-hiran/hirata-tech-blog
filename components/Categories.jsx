@@ -48,7 +48,7 @@ margin-bottom: 60px;
                 margin-bottom: 5px;
                 text-align: left;
                 color: #2DB2A4;
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: 500;
             }
         }
