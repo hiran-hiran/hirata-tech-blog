@@ -2,16 +2,29 @@ import React from 'react'
 import styled from "@emotion/styled"
 import Link from "next/link"
 
-const Pager = ({page}) => {
+import { useRouter } from "next/router"
+
+
+const Pager = ({ pages }) => {
+    const router = useRouter()
+    // console.log(router.query.page)
+
+
     return (
         <StyledDiv>
             <ul>
-                <li><a className="is-active">1</a></li>
-                <li><a>2</a></li>
-                <li><a>3</a></li>
-                <li><a>4</a></li>
-                <li><a>5</a></li>
-                <li><a>25</a></li>
+                {pages.map((page, index) => (
+                    <li key={index}>
+                        <Link href="/blog/page/[page]" as={`/blog/page/${page + 1}`} >
+                            {router.query.page === (page+1).toString() ? (
+                                    <a className="is-active" disabled={true}>{page + 1}</a>
+                                ) : (
+                                    <a className="">{page + 1}</a>
+                                )
+                            }
+                        </Link>
+                    </li>
+                ))}
             </ul>
         </StyledDiv>
     )

@@ -1,11 +1,10 @@
 import Head from 'next/head'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import Layout from '../components/Layout';
 import { getAllPosts, getCategories } from '../lib/api';
-import { useEffect } from 'react';
 import Pager from '../components/Pager';
-
+import { getPagesCount } from '../lib/createPager';
 
 
 export const getStaticProps = async () => {
@@ -16,16 +15,14 @@ export const getStaticProps = async () => {
 }
 
 
-const Home = ({ posts, categories }) => {
-	const [page, setPage] = useState(1)
-	const createPager = () => {
-		const pageLength = Math.ceil((posts.totalCount / 10))
-		setPage(pageLength)
-	}
-	useEffect(() => {
-		createPager()
-	}, [])
 
+const Home = ({ posts, categories }) => {
+    const [pages, setPages] = useState([])
+
+	useEffect(() => {
+		const pagesCount = getPagesCount(posts)
+		setPages(pagesCount)
+	}, [])
 
 	return (
 		<>
@@ -39,7 +36,7 @@ const Home = ({ posts, categories }) => {
 						/>
 					))}
 				</ul>
-				<Pager page={page} />
+				<Pager pages={pages} />
 			</Layout>
 		</>
 	)

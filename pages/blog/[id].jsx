@@ -12,7 +12,7 @@ import PostBody from "../../components/PostBody"
 
 
 export const getStaticPaths = async () => {
-    const posts = await getAllPosts()
+    const posts = await getAllPosts(1000)
     const paths = posts.contents.map(post => ({
         params: { id: post.id }
     }))

@@ -1,6 +1,6 @@
 import Categories from './Categories'
 import Banner from './Banner'
-import Popular from './Popular'
+// import Popular from './Popular'
 
 
 
@@ -10,7 +10,7 @@ const Sidebar = ({categories}) => {
         <aside>
             <Banner />
             <Categories categories={categories} />
-            <Popular />
+            {/* <Popular /> */}
         </aside>
     )
 }
