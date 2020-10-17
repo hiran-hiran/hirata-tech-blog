@@ -8,9 +8,9 @@ const TopTitle = () => {
             <div className="tri right"></div>
             <div className="inner">
                 <div className="text-wrap">
-                    <h1><span className="small">株式会社</span>Aluco<span className="small">の</span>blog</h1>
-                    <p>西大橋のweb制作会社Alucoのブログです。<br />
-                    弊社はJavaScript、wordpressに強いWeb制作会社です。お仕事のご依頼等、お気軽にお問い合わせください。</p>
+                    <h1>自分のためのblog</h1>
+                    <p>コーダーからキラキラフロントエンドになるための修行<br />
+                    忘れやすいので、自分用にまとめていこうと思います。</p>
                 </div>
                 <div className="img-wrap">
                     <img src="/img/common/ossan.png" alt="" />
@@ -68,7 +68,7 @@ color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 20px 80px;
     h1{
         font-size: 40px;
         margin-bottom: 30px;

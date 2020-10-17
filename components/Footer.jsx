@@ -10,16 +10,15 @@ const Footer = () => {
         <StyledFooter>
             <div className="wrapper">
                 <ul className="link-wrap">
-                    <li><a href="" target="_blank">Alucoについて</a></li>
-                    <li><Link href="/contact"><a>サービス</a></Link></li>
-                    <li><Link href="/contact"><a>お問い合わせ</a></Link></li>
+                    <li><Link href="/contact"><a>About</a></Link></li>
+                    <li><Link href="/contact"><a>Contact</a></Link></li>
                 </ul>
                 <ul className="icon-wrap">
-                    <li><a href="" target="_blank"><TwitterIcon className="white" /></a></li>
-                    <li><a href="" target="_blank"><FacebookIcon className="white" /></a></li>
+                    <li><a href="https://twitter.com/hinozomu" target="_blank"><TwitterIcon className="white" /></a></li>
+                    {/* <li><a href="" target="_blank"><FacebookIcon className="white" /></a></li> */}
                 </ul>
             </div>
-            <p className="copy">&copy; aluco all rights reserved</p>
+            <p className="copy">&copy; All rights reserved</p>
         </StyledFooter>
     )
 }
@@ -33,6 +32,8 @@ const StyledFooter = styled.footer`
     text-align: center;
     background: #052936;
     color: #fff;
+    margin-left: -30px;
+    width: 100vw;
     .wrapper{
         max-width: 1200px;
         margin: 0 auto;

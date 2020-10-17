@@ -12,7 +12,9 @@ export const getStaticProps = async () => {
 const about = ({categories}) => {
     return (
         <Layout categories={categories}>
-            Aboutページ
+            <p>大阪のweb制作会社のコーダー</p>
+            <p>大きい企業でフロントエンドしたい</p>
+            <p>ちょっとだけデザイナーしてました</p>
         </Layout>
     )
 }

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import styled from "@emotion/styled"
 import SearchIcon from '@material-ui/icons/Search'
-import Logo from "../public/img/common/logo.svg"
+import Logo from "../public/img/common/logo01.svg"
 
 
 
@@ -9,14 +9,16 @@ const Header = () => {
     return (
         <StyledHeader>
             <div className="wrapper">
-                <div className="logo"><Link href="/">
-                    <a><Logo /></a></Link>
+                <div className="logo">
+                    <Link href="/">
+                        <a><Logo /></a>
+                    </Link>
                 </div>
                 <div className="nav-form-wrap">
                     <ul className="navlists">
-                        <li><Link href="/about"><a>Alucoについて</a></Link></li>
-                        <li><Link href="/service"><a>サービス</a></Link></li>
-                        <li><Link href="/contact"><a>お問い合わせ</a></Link></li>
+                        <li><Link href="/about"><a>About</a></Link></li>
+                        {/* <li><Link href="/service"><a>サービス</a></Link></li> */}
+                        <li><Link href="/contact"><a>Contact</a></Link></li>
                     </ul>
                     <div className="form">
                         <form action="">
@@ -53,6 +55,14 @@ const StyledHeader = styled.header`
     .logo{
         font-size:30px;
         font-weight: bold;
+        svg{
+            width: 125px;
+            height: 60px;
+            .cls-1{
+                color:#052936;
+                fill:#052936;
+            }
+        }
     }
     .nav-form-wrap{
         display: flex;
