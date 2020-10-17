@@ -14,6 +14,7 @@ const InputForm = (props) => {
             value={props.value}
             type={props.type}
             onChange={props.onChange}
+            required
         />
     )
 }

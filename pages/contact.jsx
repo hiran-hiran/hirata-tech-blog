@@ -28,7 +28,7 @@ export default contact
 
 
 const StyledForm = styled.form`
-    width: 400px;
+    width: 100%;
     margin: 0 auto;
-
+    padding: 30px;
 `;
