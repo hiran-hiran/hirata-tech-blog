@@ -37,9 +37,9 @@ const Card = ({ post }) => {
             <Link href="/blog/[id]" as={`/blog/${post.id}`}>
                 <a>
                     <div className="flex">
-                        <div className="img">
+                        {/* <div className="img">
                             {post.thumbnail ? <img src={post.thumbnail.url} alt={post.title} /> : <img src="/img/common/not-found.png" alt={post.title} />}
-                        </div>
+                        </div> */}
                         <div className="text">
                             <div className="info">
                                 <div className="category">

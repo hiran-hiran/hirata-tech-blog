@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
-import TopTitle from './TopTitle'
+// import TopTitle from './TopTitle'
 import styled from "@emotion/styled"
 
 
@@ -11,7 +11,7 @@ const Layout = ({ children, categories }) => {
     return (
         <StyledDiv>
             <Header />
-            <TopTitle />
+            {/* <TopTitle /> */}
             <div className="content-wrap">
                 <main>
                     {children}

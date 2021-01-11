@@ -36,9 +36,9 @@ const Blog = ({ post, categories }) => {
         <Layout categories={categories}>
             <StyledDiv>
                 <div className="post-title-wrap">
-                    <div className="mv">
+                    {/* <div className="mv">
                         {post.thumbnail ? <img src={post.thumbnail.url} alt={post.title} /> : <img src="/img/common/not-found.png" alt={post.title} />}
-                    </div>
+                    </div> */}
                     <h1>{post.title}</h1>
                     <div className="info">
                         <div className="category">
