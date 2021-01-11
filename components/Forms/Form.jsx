@@ -1,87 +1,135 @@
-import React, { useState, useCallback } from 'react'
-import Button from '@material-ui/core/Button';
-import InputForm from './InputForm';
-import { makeStyles } from '@material-ui/core';
+import React, { useState, useCallback } from "react";
+import Button from "@material-ui/core/Button";
+import InputForm from "./InputForm";
+import { makeStyles } from "@material-ui/core";
+import styled from "@emotion/styled";
 // import { IncomingWebhook } from "@slack/webhook"
 
 const useStyles = makeStyles({
-    btnWrap: {
-        textAlign: "center",
-    },
-    send: {
-        background: "#2DB2A4",
-        color: "#fff",
-        margin: "30px 10px",
-        border: "none",
-    },
-    cancel: {
-        background: "#e81e31",
-        color: "#fff",
-        margin: "30px 10px",
-        border: "none",
-    }
-})
+  btnWrapper: {
+    display: "flex",
+    justifyContent: "center",
+  },
+	send: {
+		background: "#2DB2A4",
+		color: "#fff",
+		margin: "30px 10px",
+		border: "none",
+		outline: "none",
+	},
+	cancel: {
+		background: "#999",
+		color: "#fff",
+		margin: "30px 10px",
+		border: "none",
+		outline: "none",
+	},
+});
 
 const Form = () => {
-    const classes = useStyles();
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [description, setDescription] = useState("");
+	const classes = useStyles();
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [description, setDescription] = useState("");
 
-    const inputDescription = useCallback((event) => {
-        setDescription(event.target.value)
-    }, [setDescription]);
-    const inputEmail = useCallback((event) => {
-        setEmail(event.target.value)
-    }, [setEmail]);
-    const inputName = useCallback((event) => {
-        setName(event.target.value)
-    }, [setName]);
+	const inputName = useCallback(
+		(event) => {
+			setName(event.target.value);
+		},
+		[setName],
+	);
+	const inputEmail = useCallback(
+		(event) => {
+			setEmail(event.target.value);
+		},
+		[setEmail],
+	);
+	const inputDescription = useCallback(
+		(event) => {
+			setDescription(event.target.value);
+		},
+		[setDescription],
+	);
 
-    const handleClear = useCallback(() => {
-        setName("")
-        setEmail("")
-        setDescription("")
-    }, [])
+	const handleClear = useCallback(() => {
+		setName("");
+		setEmail("");
+		setDescription("");
+	}, []);
 
-    
-    const submitForm = () => {
-        if (name !== "" && email !== "" && description !== "") {
-            const payload = {
-                text: "ブログからお問い合わせがありました。\n" +
-                    "------------------------- \n" +
-                    "お名前: " + name + "\n" +
-                    "Email: " + email + "\n" +
-                    "お問い合わせ内容: \n" + description + "\n" +
-                    "------------------------- \n"
-            }
+	const submitForm = () => {
+		if (name !== "" && email !== "" && description !== "") {
+			const payload = {
+				text:
+					"ブログからお問い合わせがありました。\n" +
+					"------------------------- \n" +
+					"お名前: " +
+					name +
+					"\n" +
+					"Email: " +
+					email +
+					"\n" +
+					"お問い合わせ内容: \n" +
+					description +
+					"\n" +
+					"------------------------- \n",
+			};
 
-            fetch(process.env.SLACK_WEBHOOK_URL, {
-                method: "POST",
-                body: JSON.stringify(payload)
-            }).then(() => {
-                alert("送信が完了しました。後ほどご連絡いたします。")
-                handleClear()
-            }).catch((err) => {
-                console.log("エラー発生", err);
-            })
-        } else {
-            
-            alert("必須項目が空白です")
-        }
-    }
+			fetch(process.env.SLACK_WEBHOOK_URL, {
+				method: "POST",
+				body: JSON.stringify(payload),
+			})
+				.then(() => {
+					alert("送信が完了しました。後ほどご連絡いたします。");
+					handleClear();
+				})
+				.catch((err) => {
+					console.log("エラー発生", err);
+				});
+		} else {
+			alert("必須項目が空白です");
+		}
+	};
 
-    return (
-        <>
-            <InputForm label={"お名前（必須）"} multiline={false} rows={1} value={name} type={"text"} onChange={inputName}/>
-            <InputForm label={"メールアドレス（必須）"} multiline={false} rows={1} value={email} type={"email"} onChange={inputEmail} />
-            <InputForm label={"お問い合わせ内容（必須）"} multiline={true} rows={10} value={description} type={"text"} onChange={inputDescription} />
-            {/* <div className={classes.btnWrap}> */}
-                <Button onClick={handleClear} className={classes.cancel} variant="outlined" size="large">キャンセル</Button>
-                <Button onClick={submitForm} className={classes.send}  variant="outlined" size="large">送信する</Button>
-            {/* </div> */}
-        </>
-    )
-}
+	return (
+		<>
+			<InputForm
+				className={classes.inputRow}
+				label={"お名前（必須）"}
+				multiline={false}
+				rows={1}
+				value={name}
+				type={"text"}
+				onChange={inputName}
+			/>
+			<InputForm
+				className={classes.inputRow}
+				label={"メールアドレス（必須）"}
+				multiline={false}
+				rows={1}
+				value={email}
+				type={"email"}
+				onChange={inputEmail}
+			/>
+			<InputForm
+				label={"お問い合わせ内容（必須）"}
+				multiline={true}
+				rows={10}
+				value={description}
+				type={"text"}
+				onChange={inputDescription}
+			/>
+			<div className={classes.btnWrapper}>
+				<Button onClick={handleClear} className={classes.cancel} variant="outlined" size="large">
+					キャンセル
+				</Button>
+				<Button onClick={submitForm} className={classes.send} variant="outlined" size="large">
+					送信する
+				</Button>
+			</div>
+		</>
+	);
+};
 
-export default Form
+export default Form;
+

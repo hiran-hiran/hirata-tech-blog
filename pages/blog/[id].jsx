@@ -1,104 +1,97 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 // import Link from "next/link"
-import CategoryIcon from '@material-ui/icons/Category'
-import TimelapseIcon from '@material-ui/icons/Timelapse'
+import CategoryIcon from "@material-ui/icons/Category";
+import TimelapseIcon from "@material-ui/icons/Timelapse";
 import Layout from "../../components/Layout";
 import { getAllPosts, getPost, getCategories } from "../../lib/api";
-import { useGetPostTime } from "../../lib/hooks/useGetPostTime"
-import PostBody from "../../components/PostBody"
-
-
+import { useGetPostTime } from "../../lib/hooks/useGetPostTime";
+import PostBody from "../../components/PostBody";
 
 export const getStaticPaths = async () => {
-    const posts = await getAllPosts(1000)
-    const paths = posts.contents.map(post => ({
-        params: { id: post.id }
-    }))
-    return { paths, fallback: false }
-}
+	const posts = await getAllPosts(1000);
+	const paths = posts.contents.map((post) => ({
+		params: { id: post.id },
+	}));
+	return { paths, fallback: false };
+};
 
-export const getStaticProps = async context => {
-    const id = context.params.id
-    const post = await getPost(id)
-    const categories = await getCategories()
+export const getStaticProps = async (context) => {
+	const id = context.params.id;
+	const post = await getPost(id);
+	const categories = await getCategories();
 
-    return { props: { post, categories } }
-}
-
-
+	return { props: { post, categories } };
+};
 
 const Blog = ({ post, categories }) => {
-    const postTime = useGetPostTime(post)
+	const postTime = useGetPostTime(post);
 
-    return (
-        <Layout categories={categories}>
-            <StyledDiv>
-                <div className="post-title-wrap">
-                    {/* <div className="mv">
+	return (
+		<Layout categories={categories}>
+			<StyledDiv>
+				<div className="post-title-wrap">
+					{/* <div className="mv">
                         {post.thumbnail ? <img src={post.thumbnail.url} alt={post.title} /> : <img src="/img/common/not-found.png" alt={post.title} />}
                     </div> */}
-                    <h1>{post.title}</h1>
-                    <div className="info">
-                        <div className="category">
-                            <CategoryIcon />
-                            <p>{post.category[0].category}</p>
-                        </div>
-                        <div className="time">
-                            <TimelapseIcon />
-                            <time>{postTime}</time>
-                        </div>
-                    </div>
-                </div>
-                <PostBody body={post.body} />
-            </StyledDiv>
-        </Layout>
-    )
-}
+					<h1>{post.title}</h1>
+					<div className="info">
+						<div className="category">
+							<CategoryIcon />
+							<p>{post.category[0].category}</p>
+						</div>
+						<div className="time">
+							<TimelapseIcon />
+							<time>{postTime}</time>
+						</div>
+					</div>
+				</div>
+				<PostBody body={post.body} />
+			</StyledDiv>
+		</Layout>
+	);
+};
 
-export default Blog
-
-
+export default Blog;
 
 const StyledDiv = styled.div`
-.post-title-wrap{
-    .mv{
-        margin-bottom: 30px;
-        text-align: center;
-        /* background-color: #999; */
-        img{
-            max-width: 100%;
-        }
-    }
-    h1{
-        margin-bottom: 30px;
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 1.6;
-    }
-    .info{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding-bottom: 30px;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #eee;
-        color: #999;
-        .time{
-            display: flex;
-            align-items: center;
-        }
-            .category{
-            display: flex;
-            align-items: center;
-        }
-    }
-    svg{
-        font-size: 1.2rem;
-        margin-right: 5px;
-    }
-}
+	.post-title-wrap {
+		.mv {
+			margin-bottom: 30px;
+			text-align: center;
+			/* background-color: #999; */
+			img {
+				max-width: 100%;
+			}
+		}
+		h1 {
+			margin-bottom: 30px;
+			font-size: 36px;
+			font-weight: 700;
+			line-height: 1.6;
+		}
+		.info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+			border-bottom: 1px solid #eee;
+			color: #999;
+			.time {
+				display: flex;
+				align-items: center;
+			}
+			.category {
+				display: flex;
+				align-items: center;
+			}
+		}
+		svg {
+			font-size: 1.2rem;
+			margin-right: 5px;
+		}
+	}
 `;
-

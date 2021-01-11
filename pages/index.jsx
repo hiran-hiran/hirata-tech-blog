@@ -25,7 +25,10 @@ const Home = ({ posts, categories }) => {
 	}, [])
 
 	return (
-		<>
+    <>
+      <Head>
+        <title>ヒラタのブログ</title>
+      </Head>
 			<Layout categories={categories}>
 				<ul>
 					{posts.contents.map(post => (
