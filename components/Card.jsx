@@ -39,7 +39,7 @@ const Card = ({ post }) => {
 							<div className="info">
 								<div className="category">
 									<CategoryIcon />
-									<p>{post.category[0].category}</p>
+									<p>{post?.category[0]?.category}</p>
 								</div>
 								<div className="time">
 									<TimelapseIcon />

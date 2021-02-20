@@ -10,20 +10,20 @@ export const getStaticProps = async () => {
 
 const about = ({ categories }) => {
 	return (
-		<StyledDiv>
-			<Layout categories={categories}>
+		<Layout categories={categories}>
+			<StyledDiv>
 				<p>大阪のweb制作会社でコーダーしてます。</p>
-				<p>大きい企業でフロントエンドしたいです。</p>
-				<p>ちょっとだけデザイナーしてましたので、たまにデザインもやります。</p>
-        <p>React, Next.jsをちょこちょこ勉強してます。</p>
-        <p>このブログはNext.js(SSG), microCMSで構築しました。</p>
-			</Layout>
-		</StyledDiv>
+				<p>フロントエンド開発したいです。</p>
+				<p>ちょっとだけデザイナーしてましたので、たまにデザインもやります。</p>
+				<p>React, Next.jsをちょこちょこ勉強してます。</p>
+				<p>このブログはNext.js(SSG), microCMSで構築しました。</p>
+			</StyledDiv>
+		</Layout>
 	);
 };
 
 export default about;
 
 const StyledDiv = styled.div`
-  line-height: 1.8;
+	line-height: 2;
 `;

@@ -7,7 +7,7 @@ const PostBody = ({ body }) => {
 export default PostBody;
 
 const StyledSection = styled.section`
-	line-height: 1.6;
+	line-height: 2;
 
 	h1 {
 		margin-bottom: 20px;
@@ -44,6 +44,7 @@ const StyledSection = styled.section`
 		margin-bottom: 20px;
 		white-space: pre-wrap;
 		word-wrap: break-word;
+    line-height: 1.5;
 		code {
 			padding: 20px;
 		}
@@ -51,4 +52,8 @@ const StyledSection = styled.section`
 	p {
 		margin-bottom: 10px;
 	}
+  img{
+    display:block;
+    max-width: 100%;
+  }
 `;

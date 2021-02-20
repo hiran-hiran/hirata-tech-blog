@@ -26,6 +26,6 @@ const StyledForm = styled.form`
 	margin: 0 auto;
 	padding: 30px;
 	@media screen and (max-width: 768px) {
-		/* padding: 0; */
+		padding: 0;
 	}
 `;

@@ -39,7 +39,7 @@ const Blog = ({ post, categories }) => {
 					<div className="info">
 						<div className="category">
 							<CategoryIcon />
-							<p>{post.category[0].category}</p>
+							<p>{post?.category[0]?.category}</p>
 						</div>
 						<div className="time">
 							<TimelapseIcon />
@@ -69,7 +69,7 @@ const StyledDiv = styled.div`
 			margin-bottom: 30px;
 			font-size: 36px;
 			font-weight: 700;
-			line-height: 1.6;
+			line-height: 1.5;
 		}
 		.info {
 			display: flex;
