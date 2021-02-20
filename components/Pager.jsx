@@ -32,7 +32,7 @@ const Pager = ({ pages }) => {
 export default Pager;
 
 const StyledDiv = styled.div`
-	margin: 50px auto;
+	margin: 50px auto 0;
 	font-size: 20px;
 	ul {
 		display: flex;

@@ -91,7 +91,7 @@ const StyledCard = styled.li`
 		}
 		.text {
 			flex: 1;
-			padding-left: 20px;
+			/* padding-left: 20px; */
 			.info {
 				display: flex;
 				justify-content: space-between;
@@ -124,6 +124,12 @@ const StyledCard = styled.li`
 				font-size: 1rem;
 				margin-right: 2px;
 			}
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		a {
+			padding: 25px 0;
 		}
 	}
 `;

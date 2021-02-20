@@ -108,4 +108,14 @@ const StyledFooter = styled.footer`
 	.copy {
 		margin-top: 20px;
 	}
+
+  @media screen and (max-width: 768px) {
+    margin-left: -15px;
+    padding: 30px 0;
+    .wrapper {
+      .icon-wrap {
+        margin-bottom: 30px;
+      }
+    }
+	}
 `;

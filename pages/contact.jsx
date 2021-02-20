@@ -2,7 +2,6 @@ import React from "react";
 import Form from "../components/Forms/Form";
 import styled from "@emotion/styled";
 import Layout from "../components/Layout";
-import Sidebar from "../components/Sidebar";
 import { getCategories } from "../lib/api";
 
 export const getStaticProps = async () => {
@@ -26,4 +25,7 @@ const StyledForm = styled.form`
 	width: 100%;
 	margin: 0 auto;
 	padding: 30px;
+	@media screen and (max-width: 768px) {
+		/* padding: 0; */
+	}
 `;

@@ -48,6 +48,8 @@ const StyledHeader = styled.header`
 		color: #2db2a4;
 	}
 	width: 100%;
+  max-width: 1200px;
+  margin: auto;
 	padding: 20px 0;
 	/* border-bottom: 1px solid #ccc; */
 	background-color: #fff;
@@ -75,6 +77,7 @@ const StyledHeader = styled.header`
 	.nav-form-wrap {
 		display: flex;
 		.form {
+      display: none;
 			margin-left: 40px;
 			form {
 				position: relative;

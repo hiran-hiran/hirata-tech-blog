@@ -23,4 +23,7 @@ export default Layout;
 
 const StyledDiv = styled.div`
 	padding: 0 30px;
+	@media screen and (max-width: 768px) {
+    padding: 0 15px;
+	}
 `;
