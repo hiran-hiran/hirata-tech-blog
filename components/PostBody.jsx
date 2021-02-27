@@ -8,6 +8,7 @@ export default PostBody;
 
 const StyledSection = styled.section`
 	line-height: 2;
+  font-size: 15px;
 
 	h1 {
 		margin-bottom: 20px;
@@ -21,7 +22,7 @@ const StyledSection = styled.section`
 	h2 {
 		margin-bottom: 20px;
 		padding: 5px 0;
-		font-size: 30px;
+		font-size: 28px;
 		font-weight: 700;
 		border-bottom: 1px solid #eee;
 		line-height: 1.2;
@@ -36,6 +37,7 @@ const StyledSection = styled.section`
 	}
 	h4 {
 		margin-bottom: 10px;
+		font-size: 20px;
 		font-weight: 700;
 		line-height: 1.2;
 	}
@@ -55,5 +57,14 @@ const StyledSection = styled.section`
   img{
     display:block;
     max-width: 100%;
+  }
+  a{
+    color: #2db2a4;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+  ul{
+    padding-left: 30px;
+    list-style: disc;
   }
 `;

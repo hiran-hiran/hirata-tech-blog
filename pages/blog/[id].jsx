@@ -67,7 +67,7 @@ const StyledDiv = styled.div`
 		}
 		h1 {
 			margin-bottom: 30px;
-			font-size: 36px;
+			font-size: 34px;
 			font-weight: 700;
 			line-height: 1.5;
 		}
