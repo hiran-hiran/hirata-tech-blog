@@ -75,7 +75,7 @@ const Form = () => {
 					"------------------------- \n",
 			};
 
-			fetch(process.env.SLACK_WEBHOOK_URL, {
+			fetch(process.env.NEXT_PUBLIC_SLACK_WEBHOOK_URL, {
 				method: "POST",
 				body: JSON.stringify(payload),
 			})

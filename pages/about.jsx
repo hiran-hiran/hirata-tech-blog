@@ -12,10 +12,10 @@ const about = ({ categories }) => {
 	return (
 		<Layout categories={categories}>
 			<StyledDiv>
-				<p>大阪のweb制作会社でコーダーしてます。</p>
-				<p>フロントエンド開発したいです。</p>
+				<p>大阪のweb制作会社でマークアップしてます。</p>
+        <p>最近参加したNext.js案件が、楽しくやりがいもあったので、</p>
+        <p>もっとフロントエンドとしてキャリアを歩んでいきたいです。</p>
 				<p>ちょっとだけデザイナーしてましたので、たまにデザインもやります。</p>
-				<p>React, Next.jsをちょこちょこ勉強してます。</p>
 				<p>このブログはNext.js(SSG), microCMSで構築しました。</p>
 			</StyledDiv>
 		</Layout>
