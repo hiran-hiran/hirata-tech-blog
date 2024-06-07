@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "@emotion/styled";
-import TwitterIcon from "../public/img/icons/twitter-icon.svg";
+import NextImage from "next/image";
 
 const Footer = () => {
 	return (
@@ -21,7 +21,12 @@ const Footer = () => {
 				<ul className="icon-wrap">
 					<li>
 						<a href="https://twitter.com/hinozomu" target="_blank">
-							<TwitterIcon className="white" />
+							<NextImage
+							src="/img/icons/twitter-icon.svg"
+							width={15}
+							height={15}
+							alt="カテゴリ"
+							/>
 						</a>
 					</li>
 					{/* <li><a href="" target="_blank"><FacebookIcon className="white" /></a></li> */}

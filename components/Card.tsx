@@ -1,9 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import NextImage from "next/image";
 import { useGetPostTime } from "../lib/hooks/useGetPostTime";
-import TimeIcon from "../public/img/icons/time-icon.svg";
-import CategoryIcon from "../public/img/icons/category-icon.svg";
 
 const Card = ({ post }) => {
   const [bodyText, setBodyText] = useState(post.body);
@@ -37,11 +36,21 @@ const Card = ({ post }) => {
           <div className="text">
             <div className="info">
               <div className="category">
-                <CategoryIcon />
+                <NextImage
+                  src="/img/icons/category-icon.svg"
+                  width={15}
+                  height={15}
+                  alt="カテゴリ"
+                />
                 <p>{post?.category[0]?.category}</p>
               </div>
               <div className="time">
-                <TimeIcon />
+                <NextImage
+                  src="/img/icons/time-icon.svg"
+                  width={15}
+                  height={15}
+                  alt="時間"
+                />
                 <time>{postTime}</time>
               </div>
             </div>

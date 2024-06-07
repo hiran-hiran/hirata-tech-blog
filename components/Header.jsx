@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "@emotion/styled";
-import Logo from "../public/img/common/logo01.svg";
+// import Logo from "../public/img/common/logo01.svg";
+import NextImage from "next/image";
 
 const Header = () => {
 	return (
@@ -8,15 +9,20 @@ const Header = () => {
 			<div className="wrapper">
 				<div className="logo">
 					<Link href="/">
-					<Logo />
+					<NextImage
+					src="/img/common/logo01.svg"
+					width={120}
+					height={50}
+					alt="ロゴ"
+					/>
 					</Link>
 				</div>
 				<div className="nav-form-wrap">
 					<ul className="navlists">
 						<li>
-							<Link href="/about">
-							about
-							</Link>
+						<Link href="/about">
+						about
+						</Link>
 						</li>
 						{/* <li><Link href="/service"><a>サービス</a></Link></li> */}
 						<li>

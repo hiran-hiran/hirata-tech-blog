@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 
 import styled from "@emotion/styled";
 // import Link from "next/link"
-import TimeIcon from "../public/img/icons/time-icon.svg";
-import CategoryIcon from "../public/img/icons/category-icon.svg";
+import NextImage from "next/image";
 import Layout from "../../components/Layout";
 import { getAllPosts, getPost, getCategories } from "../../lib/api";
 import { useGetPostTime } from "../../lib/hooks/useGetPostTime";
@@ -38,11 +37,21 @@ const Blog = ({ post, categories }) => {
 					<h1>{post.title}</h1>
 					<div className="info">
 						<div className="category">
-							<CategoryIcon />
+						<NextImage
+                  src="/img/icons/category-icon.svg"
+                  width={15}
+                  height={15}
+                  alt="カテゴリ"
+                />
 							<p>{post?.category[0]?.category}</p>
 						</div>
 						<div className="time">
-							<TimeIcon />
+						<NextImage
+                  src="/img/icons/time-icon.svg"
+                  width={15}
+                  height={15}
+                  alt="時間"
+                />
 							<time>{postTime}</time>
 						</div>
 					</div>
