@@ -1,33 +1,31 @@
 import React, { useState, useCallback } from "react";
-import Button from "@material-ui/core/Button";
 import InputForm from "./InputForm";
-import { makeStyles } from "@material-ui/core";
-import styled from "@emotion/styled";
+// import { makeStyles } from "@material-ui/core";
 // import { IncomingWebhook } from "@slack/webhook"
 
-const useStyles = makeStyles({
-  btnWrapper: {
-    display: "flex",
-    justifyContent: "center",
-  },
-	send: {
-		background: "#2DB2A4",
-		color: "#fff",
-		margin: "30px 10px",
-		border: "none",
-		outline: "none",
-	},
-	cancel: {
-		background: "#999",
-		color: "#fff",
-		margin: "30px 10px",
-		border: "none",
-		outline: "none",
-	},
-});
+// const useStyles = makeStyles({
+//   btnWrapper: {
+//     display: "flex",
+//     justifyContent: "center",
+//   },
+// 	send: {
+// 		background: "#2DB2A4",
+// 		color: "#fff",
+// 		margin: "30px 10px",
+// 		border: "none",
+// 		outline: "none",
+// 	},
+// 	cancel: {
+// 		background: "#999",
+// 		color: "#fff",
+// 		margin: "30px 10px",
+// 		border: "none",
+// 		outline: "none",
+// 	},
+// });
 
 const Form = () => {
-	const classes = useStyles();
+	// const classes = useStyles();
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [description, setDescription] = useState("");
@@ -94,7 +92,7 @@ const Form = () => {
 	return (
 		<>
 			<InputForm
-				className={classes.inputRow}
+				// className={classes.inputRow}
 				label={"お名前（必須）"}
 				multiline={false}
 				rows={1}
@@ -103,7 +101,7 @@ const Form = () => {
 				onChange={inputName}
 			/>
 			<InputForm
-				className={classes.inputRow}
+				// className={classes.inputRow}
 				label={"メールアドレス（必須）"}
 				multiline={false}
 				rows={1}
@@ -119,13 +117,19 @@ const Form = () => {
 				type={"text"}
 				onChange={inputDescription}
 			/>
-			<div className={classes.btnWrapper}>
-				<Button onClick={handleClear} className={classes.cancel} variant="outlined" size="large">
+			<div 
+			// className={classes.btnWrapper}
+			>
+				<button onClick={handleClear} 
+				// className={classes.cancel}
+				>
 					キャンセル
-				</Button>
-				<Button onClick={submitForm} className={classes.send} variant="outlined" size="large">
+				</button>
+				<button onClick={submitForm}
+				//className={classes.send}
+				 >
 					送信する
-				</Button>
+				</button>
 			</div>
 		</>
 	);

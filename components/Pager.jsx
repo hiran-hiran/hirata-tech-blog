@@ -13,13 +13,11 @@ const Pager = ({ pages }) => {
 			<ul>
 				{pages.map((page, index) => (
 					<li key={index}>
-						<Link href="/blog/page/[page]" as={`/blog/page/${page + 1}`}>
+						<Link href="/blog/page/[page]" as={`/blog/page/${page + 1}`} className="is-active" disabled={true}>
 							{router.query.page === (page + 1).toString() ? (
-								<a className="is-active" disabled={true}>
-									{page + 1}
-								</a>
+								page + 1
 							) : (
-								<a className="">{page + 1}</a>
+								page + 1
 							)}
 						</Link>
 					</li>

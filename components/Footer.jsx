@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "@emotion/styled";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "../public/img/icons/twitter-icon.svg";
 
 const Footer = () => {
 	return (
@@ -10,12 +9,12 @@ const Footer = () => {
 				<ul className="link-wrap">
 					<li>
 						<Link href="/contact">
-							<a>About</a>
+						About
 						</Link>
 					</li>
 					<li>
 						<Link href="/contact">
-							<a>Contact</a>
+						Contact
 						</Link>
 					</li>
 				</ul>

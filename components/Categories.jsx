@@ -9,7 +9,7 @@ const Categories = ({ categories }) => {
 				{categories.contents.map((cate) => (
 					<li key={cate.id} className={`list_${cate.url}`}>
 						<Link href="/category/[category]" as={`/category/${cate.url}`}>
-							<a>{cate.category}</a>
+							{cate.category}
 						</Link>
 					</li>
 				))}

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styled from "@emotion/styled";
-import SearchIcon from "@material-ui/icons/Search";
 import Logo from "../public/img/common/logo01.svg";
 
 const Header = () => {
@@ -9,22 +8,20 @@ const Header = () => {
 			<div className="wrapper">
 				<div className="logo">
 					<Link href="/">
-						<a>
-							<Logo />
-						</a>
+					<Logo />
 					</Link>
 				</div>
 				<div className="nav-form-wrap">
 					<ul className="navlists">
 						<li>
 							<Link href="/about">
-								<a>About</a>
+							about
 							</Link>
 						</li>
 						{/* <li><Link href="/service"><a>サービス</a></Link></li> */}
 						<li>
 							<Link href="/contact">
-								<a>Contact</a>
+							Contact
 							</Link>
 						</li>
 					</ul>
@@ -32,7 +29,7 @@ const Header = () => {
 						<form action="">
 							<input type="text" placeholder="Search..." />
 							<button>
-								<SearchIcon className="green" />
+								{/* <SearchIcon className="green" /> */}
 							</button>
 						</form>
 					</div>

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 import styled from "@emotion/styled";
 // import Link from "next/link"
-import CategoryIcon from "@material-ui/icons/Category";
-import TimelapseIcon from "@material-ui/icons/Timelapse";
+import TimeIcon from "../public/img/icons/time-icon.svg";
+import CategoryIcon from "../public/img/icons/category-icon.svg";
 import Layout from "../../components/Layout";
 import { getAllPosts, getPost, getCategories } from "../../lib/api";
 import { useGetPostTime } from "../../lib/hooks/useGetPostTime";
@@ -42,7 +42,7 @@ const Blog = ({ post, categories }) => {
 							<p>{post?.category[0]?.category}</p>
 						</div>
 						<div className="time">
-							<TimelapseIcon />
+							<TimeIcon />
 							<time>{postTime}</time>
 						</div>
 					</div>
