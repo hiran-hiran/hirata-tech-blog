@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 import Link from "next/link";
 import NextImage from "next/image";
 import { useGetPostTime } from "../lib/hooks/useGetPostTime";
 
-const Card = ({ post }) => {
+export const Card = ({ post }) => {
   const [bodyText, setBodyText] = useState(post.body);
 
   const postTime = useGetPostTime(post);
@@ -27,15 +27,15 @@ const Card = ({ post }) => {
   }, []);
 
   return (
-    <StyledCard>
-      <Link href="/blog/[id]" as={`/blog/${post.id}`}>
+    <div className="border-b-[1px] border-[#eee] last:border-none">
+      <Link href={`/blog/${post.id}`} className="group block p-7 max-md:px-0">
         <div className="flex">
           {/* <div className="img">
                 {post.thumbnail ? <img src={post.thumbnail.url} alt={post.title} /> : <img src="/img/common/not-found.png" alt={post.title} />}
             </div> */}
-          <div className="text">
-            <div className="info">
-              <div className="category">
+          <div className="flex flex-col gap-4">
+            <div className="flex justify-between mt-3">
+              <div className="flex items-center">
                 <NextImage
                   src="/img/icons/category-icon.svg"
                   width={15}
@@ -44,7 +44,7 @@ const Card = ({ post }) => {
                 />
                 <p>{post?.category[0]?.category}</p>
               </div>
-              <div className="time">
+              <div className="flex items-center">
                 <NextImage
                   src="/img/icons/time-icon.svg"
                   width={15}
@@ -54,91 +54,13 @@ const Card = ({ post }) => {
                 <time>{postTime}</time>
               </div>
             </div>
-            <h2 className="title">{post.title}</h2>
-            <p className="body-text">{bodyText}</p>
+            <h2 className="group-hover:text-[#2db2a4] transition-colors ease-in-out text-3xl font-bold">
+              {post.title}
+            </h2>
+            <p className="leading-6">{bodyText}</p>
           </div>
         </div>
       </Link>
-    </StyledCard>
+    </div>
   );
 };
-
-const StyledCard = styled.li`
-  border-bottom: 1px solid #eee;
-  &:last-child {
-    border-bottom: none;
-  }
-  a {
-    display: block;
-    padding: 25px 30px;
-    background: #fff;
-    &:hover {
-      .title {
-        color: #2db2a4;
-      }
-      img {
-        transform: scale(1.1);
-      }
-    }
-  }
-
-  .flex {
-    display: flex;
-    .img {
-      width: 300px;
-      height: 200px;
-      border-radius: 5px;
-      overflow: hidden;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: ease-in-out 0.3s;
-      }
-    }
-    .text {
-      flex: 1;
-      /* padding-left: 20px; */
-      .info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 15px;
-        color: #999;
-        font-size: 15px;
-        /* font-family: 'Noto Sans JP'; */
-      }
-      .time {
-        display: flex;
-        align-items: center;
-      }
-      .category {
-        display: flex;
-        align-items: center;
-      }
-      .title {
-        margin-bottom: 20px;
-        font-size: 28px;
-        font-weight: 700;
-        transition: ease-in-out 0.3s;
-      }
-      .body-text {
-        color: #999;
-        line-height: 1.6;
-      }
-      svg {
-        font-size: 1rem;
-        margin-right: 2px;
-      }
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    a {
-      padding: 25px 0;
-    }
-  }
-`;
-
-export default Card;

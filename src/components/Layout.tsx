@@ -1,26 +1,16 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 import Sidebar from "./Sidebar";
-import styled from "@emotion/styled";
 
-const Layout = ({ children, categories }) => {
+export const Layout = ({ children, categories }) => {
   return (
-    <StyledDiv>
+    <div className="px-8 max-md:px-4">
       <Header />
       <div className="content-wrap">
         <main>{children}</main>
         <Sidebar categories={categories} />
       </div>
       <Footer />
-    </StyledDiv>
+    </div>
   );
 };
-
-export default Layout;
-
-const StyledDiv = styled.div`
-  padding: 0 30px;
-  @media screen and (max-width: 768px) {
-    padding: 0 15px;
-  }
-`;

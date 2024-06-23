@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-import Card from "../../../components/Card";
-import Layout from "../../../components/Layout";
+import { Card } from "~/components/Card";
+import { Layout } from "../../../components/Layout";
 import Pager from "../../../components/Pager";
 
 import { getAllPosts, getCategories, getPagePosts } from "../../../lib/api";

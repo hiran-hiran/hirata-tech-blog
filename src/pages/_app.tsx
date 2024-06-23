@@ -1,5 +1,5 @@
-import "../styles/global.css";
-import "../styles/common.css";
+import "~/styles/global.css";
+import "~/styles/common.css";
 import "highlight.js/styles/night-owl.css";
 import Router from "next/router";
 import * as gtag from "../lib/gtag";

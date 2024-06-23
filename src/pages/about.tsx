@@ -1,6 +1,5 @@
 import { InferGetStaticPropsType, NextPage } from "next";
-import styled from "@emotion/styled";
-import Layout from "../components/Layout";
+import { Layout } from "../components/Layout";
 import { getCategories } from "../lib/api";
 
 export const getStaticProps = async () => {
@@ -14,18 +13,14 @@ const about: NextPage<Props> = ({ categories }) => {
   console.log({ categories });
   return (
     <Layout categories={categories}>
-      <StyledDiv>
+      <div className="leading-[2]">
         <p>大阪のSESで自社サービス開発してます。</p>
         <p>Next.js, TypeScript, GraphQLあたりを使っています。</p>
         <p>ちょっとだけデザイナーしてましたので、たまにデザインもやります。</p>
         <p>このブログはNext.js(SSG), microCMSで構築しました。</p>
-      </StyledDiv>
+      </div>
     </Layout>
   );
 };
 
 export default about;
-
-const StyledDiv = styled.div`
-  line-height: 2;
-`;

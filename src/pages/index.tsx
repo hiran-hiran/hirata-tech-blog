@@ -2,8 +2,8 @@ import Head from "next/head";
 import { InferGetStaticPropsType, NextPage } from "next";
 
 import { useState, useEffect } from "react";
-import Card from "../components/Card";
-import Layout from "../components/Layout";
+import { Card } from "~/components/Card";
+import { Layout } from "../components/Layout";
 import { getAllPosts, getCategories } from "../lib/api";
 import Pager from "../components/Pager";
 import { getPagesCount } from "../lib/createPager";

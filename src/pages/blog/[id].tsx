@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 // import Link from "next/link"
 import NextImage from "next/image";
-import Layout from "../../components/Layout";
+import { Layout } from "../../components/Layout";
 import { getAllPosts, getPost, getCategories } from "../../lib/api";
 import { useGetPostTime } from "../../lib/hooks/useGetPostTime";
 import PostBody from "../../components/PostBody";
@@ -29,7 +29,7 @@ const Blog = ({ post, categories }) => {
 
   return (
     <Layout categories={categories}>
-      <StyledDiv>
+      <div>
         <div className="post-title-wrap">
           {/* <div className="mv">
                         {post.thumbnail ? <img src={post.thumbnail.url} alt={post.title} /> : <img src="/img/common/not-found.png" alt={post.title} />}
@@ -57,50 +57,50 @@ const Blog = ({ post, categories }) => {
           </div>
         </div>
         <PostBody body={post.body} />
-      </StyledDiv>
+      </div>
     </Layout>
   );
 };
 
 export default Blog;
 
-const StyledDiv = styled.div`
-  .post-title-wrap {
-    .mv {
-      margin-bottom: 30px;
-      text-align: center;
-      /* background-color: #999; */
-      img {
-        max-width: 100%;
-      }
-    }
-    h1 {
-      margin-bottom: 30px;
-      font-size: 34px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-    .info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding-bottom: 30px;
-      margin-bottom: 30px;
-      border-bottom: 1px solid #eee;
-      color: #999;
-      .time {
-        display: flex;
-        align-items: center;
-      }
-      .category {
-        display: flex;
-        align-items: center;
-      }
-    }
-    svg {
-      font-size: 1.2rem;
-      margin-right: 5px;
-    }
-  }
-`;
+// const StyledDiv = styled.div`
+//   .post-title-wrap {
+//     .mv {
+//       margin-bottom: 30px;
+//       text-align: center;
+//       /* background-color: #999; */
+//       img {
+//         max-width: 100%;
+//       }
+//     }
+//     h1 {
+//       margin-bottom: 30px;
+//       font-size: 34px;
+//       font-weight: 700;
+//       line-height: 1.5;
+//     }
+//     .info {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       width: 100%;
+//       padding-bottom: 30px;
+//       margin-bottom: 30px;
+//       border-bottom: 1px solid #eee;
+//       color: #999;
+//       .time {
+//         display: flex;
+//         align-items: center;
+//       }
+//       .category {
+//         display: flex;
+//         align-items: center;
+//       }
+//     }
+//     svg {
+//       font-size: 1.2rem;
+//       margin-right: 5px;
+//     }
+//   }
+// `;

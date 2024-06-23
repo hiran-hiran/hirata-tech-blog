@@ -1,20 +1,9 @@
-import styled from "@emotion/styled";
-
-const Banner = () => {
+export const Banner = () => {
   return (
-    <StyledDiv>
+    <div className="mb-16">
       {/* <a href="http://aluco.jp/ec-package/" target="_blank"> */}
       <img src="/img/common/banner.jpg" alt="screew" />
       {/* </a> */}
-    </StyledDiv>
+    </div>
   );
 };
-
-export default Banner;
-
-const StyledDiv = styled.div`
-  margin-bottom: 60px;
-  img {
-    width: 100%;
-  }
-`;

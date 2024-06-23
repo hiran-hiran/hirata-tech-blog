@@ -1,5 +1,5 @@
 import Categories from "./Categories";
-import Banner from "./Banner";
+import { Banner } from "./Banner";
 // import Popular from './Popular'
 
 const Sidebar = ({ categories }) => {

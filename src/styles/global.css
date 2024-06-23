@@ -1,4 +1,7 @@
 /*! destyle.css v1.0.15 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Reset box-model */
 /* ============================================ */

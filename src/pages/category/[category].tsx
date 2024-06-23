@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { getAllPosts, getCategories, getCategoryPosts } from "../../lib/api";
-import Layout from "../../components/Layout";
-import Card from "../../components/Card";
+import { Layout } from "~/components/Layout";
+import { Card } from "~/components/Card";
 
 export const getStaticPaths = async () => {
   const categories = await getCategories();
